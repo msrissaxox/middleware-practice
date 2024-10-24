@@ -9,7 +9,8 @@ const app = express();
 const port = 3000;
 
 app.get("/", (req, res) => {
-    res.sendFile(__dirname + "/public/index.html");
+  console.log(__dirname + "/public/index.html");
+  res.sendFile(__dirname + "/public/index.html");
 });
 //Middleware
 //because we are dealing with html file
@@ -18,8 +19,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
 app.post("/submit", (req, res) => {
-console.log("req.body");
-
+console.log(req.body);
 });
 
 app.listen(port, () => {
